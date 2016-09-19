@@ -1,6 +1,5 @@
 FROM fedora:23
 MAINTAINER Husain Khambaty <husain.khambaty@gmail.com>
-# http://www.husainkhambaty.com
 
 # package installation
 RUN dnf update -qy

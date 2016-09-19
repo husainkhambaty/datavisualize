@@ -10,7 +10,7 @@ build:
 	docker build -t $(IMG_NAME) .
 
 # Destroy the image
-clean:
+clean: 
 	docker rmi $(IMG_NAME) 2>/dev/null || true
 	
 # Remove the instance
@@ -38,7 +38,7 @@ data:
 	docker run --name=$(DATA_CON) -ti $(IMG_NAME) true 2>/dev/null || true
 
 # Destroy the Data image
-purge: stop
+purge: stop remove
 	@read -n1 -r -p "This will remove all persistent data. Are you sure? " ;\
 	echo ;\
 	if [ "$$REPLY" == "y" ]; then \
@@ -49,6 +49,6 @@ purge: stop
 check: build
 	docker run --rm -it $(DEV_VOL) $(IMG_NAME) bash -c "cd /host; pep8 --show-source --show-pep8 /host/scripts/*.py"
 	docker run --rm -it $(DEV_VOL) $(IMG_NAME) bash -c "cd /host; pylint scripts/*.py"
-	docker run --rm -it $(DEV_VOL) $(IMG_NAME) jsonlint /host/grafana/randomdata-dashboard.json
+	docker run --rm -it $(DEV_VOL) $(IMG_NAME) jsonlint /host/grafana/initial-dashboard.json
 
 .PHONY: build clean stop run shell data purge check

@@ -1,7 +1,7 @@
 IMG_NAME=datavisualize
 DATA_CON=$(IMG_NAME)-data
 DASH_CON=$(IMG_NAME)
-PORTS+=-p 10000:80 
+PORTS+=-p 10000:80 -p 2003:10003
 VOLUMES+=--volumes-from $(DATA_CON) -v /etc/localtime:/etc/localtime:ro
 DEV_VOL=-v $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST)))):/host
 

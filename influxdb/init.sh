@@ -8,7 +8,11 @@ if [ -f ${STAMP} ]; then
   exit 0
 fi
 
-/etc/init.d/influxdb start
+# Solve the Graphite configuration
+# TODO: Accept a config param. If its true then we run the below command otherwise 
+\cp -p /etc/influxdb/influxdb.conf /etc/opt/influxdb/influxdb.conf
+
+/etc/init.d/influxdb start 
 
 # wait for influxdb to respond to requests
 until /opt/influxdb/influx -execute 'show databases'; do sleep 1; done

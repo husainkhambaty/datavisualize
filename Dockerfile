@@ -17,6 +17,7 @@ RUN pip install -q demjson
 
 # influxdb
 ADD ./influxdb/init.sh /init-influxdb.sh
+ADD ./influxdb/influxdb.conf /etc/influxdb/influxdb.conf
 RUN bash /init-influxdb.sh
 
 # grafana

@@ -10,7 +10,7 @@ fi
 
 # Solve the Graphite configuration
 # TODO: Accept a config param. If its true then we run the below command otherwise 
-\cp -p /etc/influxdb/influxdb.conf /etc/opt/influxdb/influxdb.conf
+# \cp -p /etc/influxdb/influxdb.conf /etc/opt/influxdb/influxdb.conf
 
 /etc/init.d/influxdb start 
 

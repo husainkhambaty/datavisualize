@@ -1,1 +1,41 @@
-# DataVisualize
+## DataVisualize
+
+The DataVisualize project is to help deploy InfluxDB and Grafana in a single instance of Docker. This will then be deployed and connected to multiple performance tools to visualize performance data into beautiful graphs.
+
+
+## Install Instructions
+
+You will first want to download the code to your local machine. You can either download it using the Download option or use git to clone the repository.
+
+1. git clone https://github.com/husainkhambaty/datavisualize.git
+2. make create
+
+Now you can open a browser and go to http://localhost:10000 to access the Grafana Dashboard. You can use the "light:light" user account to access a non-privileged account to view the dashboards. 
+
+## Ports
+
+1. Grafana is accessible on port 10000
+2. InfluxDB admin is accessible on port 8083
+3. Optional: If you are using JMeter, Graphite is accessible on 2003
+
+## Stopping and Starting the Instance
+
+To stop and/or start the docker image instance, you can use the following command:
+
+1. make stop
+2. make start
+
+## Clean and Delete the instance data
+
+To delete all the existing instance along with the data from the data volume, you can use the following command:
+
+1. make purge
+2. make clean
+
+## Login to the Shell
+
+To login to the shell and administer Grafana or InfluxDB, you can use the following command:
+
+1. make shell
+
+Ensure the instance is up and running.

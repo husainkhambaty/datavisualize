@@ -3,7 +3,7 @@
   "title": "App Performance",
   "originalTitle": "App Performance",
   "tags": [],
-  "style": "dark",
+  "style": "light",
   "timezone": "browser",
   "editable": true,
   "hideControls": false,
@@ -12,7 +12,7 @@
     {
       "collapse": false,
       "editable": true,
-      "height": "250px",
+      "height": "150px",
       "panels": [
         {
           "title": "'Transaction Name' Throughput",
@@ -187,7 +187,7 @@
     },
     {
       "title": "New row",
-      "height": "250px",
+      "height": "200px",
       "editable": true,
       "collapse": false,
       "panels": [
@@ -278,7 +278,7 @@
     },
     {
       "title": "New row",
-      "height": "250px",
+      "height": "200px",
       "editable": true,
       "collapse": false,
       "panels": [
@@ -451,7 +451,7 @@
     },
     {
       "title": "New row",
-      "height": "250px",
+      "height": "200px",
       "editable": true,
       "collapse": false,
       "panels": [

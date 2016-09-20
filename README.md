@@ -1,16 +1,14 @@
 # DataVisualize
 
-The DataVisualize project is to help deploy InfluxDB and Grafana in a single instance of Docker. This will then be deployed and connected to multiple performance tools to visualize performance data into beautiful graphs. 
-
-## Background
+The DataVisualize project is to help deploy InfluxDB and Grafana in a single instance of Docker. This can be used to connect to different performance tools to capture, log and visualize data live on different dashboards.
 
 ## Prerequisites
 
 Here are a list of prerequisites to start and run the Grafana and InfluxDB instance.
 
-1. Docker
-2. Make 
-3. GIT (Optional)
+1. [Docker](https://www.docker.com)
+2. [Make for Windows](http://gnuwin32.sourceforge.net/packages/make.htm) 
+3. [GIT](https://git-scm.com/downloads)
 
 ## Install Instructions
 
@@ -21,9 +19,9 @@ git clone https://github.com/husainkhambaty/datavisualize.git
 make create
 ```
 
-If you are using a Windows machine, you would need to download [Make for Windows](http://gnuwin32.sourceforge.net/packages/make.htm) and run it in the Docker Command Line Interface (CLI) console. 
+*If you are using a Windows machine run it in the Docker Command Line Interface (CLI) console.*
 
-__You can open a browser and go to http://localhost:10000 to access the Grafana Dashboard. You can use the "light:light" user account to access a non-privileged account to view the dashboards.__
+*You can open a browser and go to http://localhost:10000 to access the Grafana Dashboard. You can use the "light:light" user account to access a non-privileged account to view the dashboards.*
 
 ## Stopping and Starting the Instance
 

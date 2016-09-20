@@ -8,6 +8,8 @@ if [ -f ${STAMP} ]; then
   exit 0
 fi
 
+# TODO: Refer http://docs.grafana.org/reference/http_api/ for Grafana API
+
 /etc/init.d/grafana-server start
 
 until nc localhost 3000 < /dev/null; do sleep 1; done
@@ -54,6 +56,27 @@ curl 'http://admin:admin@localhost:3000/api/users/2' \
       }'
 DATASOURCE
 echo
+
+# Update the Current organization name
+curl 'http://admin:admin@localhost:3000/api/org' \
+    -X PUT -H "Content-Type: application/json" \
+    --data-binary <<DATASOURCE \
+      '{
+        "name":"Planit"
+      }'
+DATASOURCE
+echo
+
+# Make the user an admin user
+curl 'http://admin:admin@localhost:3000/api/org/users/2' \
+    -X PATCH -H "Content-Type: application/json" \
+    --data-binary <<DATASOURCE \
+      '{
+        "role":"Admin"
+      }'
+DATASOURCE
+echo
+
 
 /etc/init.d/grafana-server stop
 

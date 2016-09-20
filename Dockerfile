@@ -36,6 +36,7 @@ ADD ./crontab-entries /etc/cron.d/data-scripts
 
 # import grafana dashboard
 ADD ./grafana/randomdata-dashboard.json /var/lib/grafana/dashboards/randomdata-dashboard.json
+ADD ./grafana/initial-dashboard.json /var/lib/grafana/dashboards/initial-dashboard.json
 
 # expose ports for nginx (grafana)
 EXPOSE 80

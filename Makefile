@@ -1,4 +1,4 @@
-IMG_NAME=datavisualize
+IMG_NAME=datavisualize-new
 DATA_CON=$(IMG_NAME)-data
 DASH_CON=$(IMG_NAME)
 PORTS+=-p 10000:80 -p 2003:10003 -p 8083:8083 -p 8086:8086

@@ -3,8 +3,11 @@ MAINTAINER Husain Khambaty <husain.khambaty@gmail.com>
 
 # package installation
 RUN dnf update -qy
-RUN dnf install -qy https://s3.amazonaws.com/influxdb/influxdb-0.9.4-1.x86_64.rpm
-RUN dnf install -qy https://grafanarel.s3.amazonaws.com/builds/grafana-2.1.3-1.x86_64.rpm
+#RUN dnf install -qy https://s3.amazonaws.com/influxdb/influxdb-0.9.4-1.x86_64.rpm
+RUN dnf install -qy https://dl.influxdata.com/influxdb/releases/influxdb-1.2.2.x86_64.rpm
+
+#RUN dnf install -qy https://grafanarel.s3.amazonaws.com/builds/grafana-2.1.3-1.x86_64.rpm
+RUN dnf install -qy https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-4.2.0-1.x86_64.rpm
 RUN dnf install -qy nginx
 RUN dnf install -qy supervisor
 RUN dnf install -qy cronie

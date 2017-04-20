@@ -1,7 +1,7 @@
 IMG_NAME=datavisualize
 DATA_CON=$(IMG_NAME)-data
 DASH_CON=$(IMG_NAME)
-PORTS+=-p 10000:80 -p 2003:10003
+PORTS+=-p 10000:80 -p 2003:10003 -p 8083:8083 -p 8086:8086
 VOLUMES+=--volumes-from $(DATA_CON) -v /etc/localtime:/etc/localtime:ro
 DEV_VOL=-v $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST)))):/host
 
@@ -49,6 +49,6 @@ purge: stop remove
 check: build
 	docker run --rm -it $(DEV_VOL) $(IMG_NAME) bash -c "cd /host; pep8 --show-source --show-pep8 /host/scripts/*.py"
 	docker run --rm -it $(DEV_VOL) $(IMG_NAME) bash -c "cd /host; pylint scripts/*.py"
-	docker run --rm -it $(DEV_VOL) $(IMG_NAME) jsonlint /host/grafana/initial-dashboard.json
+	# docker run --rm -it $(DEV_VOL) $(IMG_NAME) jsonlint /host/grafana/initial-dashboard.json
 
 .PHONY: build clean stop run shell data purge check

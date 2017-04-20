@@ -40,6 +40,8 @@ ADD ./grafana/initial-dashboard.json /var/lib/grafana/dashboards/initial-dashboa
 
 # expose ports for nginx (grafana)
 EXPOSE 80
+EXPOSE 8083
+EXPOSE 8086
 
 # expose influxdb data for creating a data volume container
 VOLUME /var/opt/influxdb/
